@@ -1,0 +1,527 @@
+<?php require_once "config/conexion.php"; ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cevichería - El Sabor Marino</title>
+
+    <!-- FUENTE POPPINS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    
+</head>
+
+<body>
+  <div class="wrapper">
+
+<!-- ===================== NAVBAR FUTURISTA ==================== -->
+ <div class="bubbles"></div>
+<header class="navbar">
+    <div class="logo">Cevichería El Sabor Marino</div>
+    <nav>
+        <a href="#home">Inicio</a>
+        <a href="#productos">Platos</a>
+        <a href="#promociones">Promociones</a>
+        <a href="#about">Acerca</a>
+        <a href="#contact">Contacto</a>
+    </nav>
+</header>
+
+<!-- Secciones -->
+
+<section id="productos" style="display:none;">
+    <h1>Platos</h1>
+    <p>Nuestros deliciosos platos de mar.</p>
+</section>
+
+<section id="promociones" style="display:none;">
+    <h1>Promociones</h1>
+    <p>Ofertas especiales y combos.</p>
+</section>
+
+<section id="about" style="display:none;">
+    <h1>Acerca</h1>
+    <p>Conoce nuestra historia y pasión por la comida marina.</p>
+</section>
+
+<section id="contact" style="display:none;">
+    <h1>Contacto</h1>
+    <p>Escríbenos o visítanos.</p>
+</section>
+
+
+
+<!-- ===================== CARRUSEL PREMIUM ===================== -->
+<section id="home" class="carousel-premium">
+  <div class="carousel-track">
+
+    <div class="carousel-slide slide-1">
+      <div class="slide-content">
+        <h2>NUESTRO MENÚ</h2>
+        <p>Frescura, sabor y tradición marina.</p>
+        <a href="#menu" class="btn-cta">Ver Platos</a>
+      </div>
+    </div>
+
+    <div class="carousel-slide slide-2">
+      <div class="slide-content">
+        <h2>CEVICHES PREMIUM</h2>
+        <p>Ingredientes seleccionados — sabor auténtico peruano.</p>
+        <a href="#menu" class="btn-cta">Ordenar Ahora</a>
+      </div>
+    </div>
+
+    <div class="carousel-slide slide-3">
+      <div class="slide-content">
+        <h2>LECHE DE TIGRE</h2>
+        <p>La energía marina que te despierta el alma.</p>
+        <a href="#menu" class="btn-cta">Pedir</a>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="carousel-btn prev">❮</button>
+  <button class="carousel-btn next">❯</button>
+  <div class="carousel-dots"></div>
+</section>
+
+<!-- JS -->
+<script src="assets/js/carrusel.js"></script>
+
+
+<!-- ===================== SECCIÓN PLATOS DESTACADOS ==================== -->
+<section id="menu">
+  <h2>Platos Marinos</h2>
+  <div class="cards-grid">
+
+    <div class="card">
+      <img src="assets/img/seviche.jpg" alt="Ceviche Clásico">
+      <h3>Ceviche Clásico</h3>
+      <p>Fresco pescado del día marinado con limón, cebolla y ají, acompañado de camote y choclo.</p>
+      <a href="menu.php" class="btn">Pedir Ahora</a>
+    </div>
+
+    <div class="card">
+      <img src="assets/img/ceviche-mixto.jpg" alt="Ceviche Mixto">
+      <h3>Ceviche Mixto</h3>
+      <p>Mariscos frescos combinados con el auténtico sabor peruano: camarones, calamares y pescado.</p>
+      <a href="menu.php" class="btn">Ver Menú</a>
+    </div>
+
+    <div class="card">
+      <img src="assets/img/pulpo.webp" alt="Pulpo a la Parrilla">
+      <h3>Pulpo a la Parrilla</h3>
+      <p>Tentáculos de pulpo cocinados a la parrilla con aceite de oliva, especias y ensalada fresca.</p>
+      <a href="menu.php" class="btn">Ordenar</a>
+    </div>
+
+    <div class="card">
+      <img src="assets/img/langostinos.jpg" alt="Langostinos al Ajillo">
+      <h3>Langostinos al Ajillo</h3>
+      <p>Langostinos salteados en mantequilla y ajo con un toque de limón y perejil fresco.</p>
+      <a href="menu.php" class="btn">Pedir Ahora</a>
+    </div>
+
+    <div class="card">
+      <img src="assets/img/arroz-mariscos.jpg" alt="Arroz con Mariscos">
+      <h3>Arroz con Mariscos</h3>
+      <p>Arroz amarillo con camarones, calamares y mejillones, cocinado con hierbas y especias del mar.</p>
+      <a href="menu.php" class="btn">Ver Menú</a>
+    </div>
+
+    <div class="card">
+      <img src="assets/img/pescado-plancha.jpg" alt="Pescado a la Plancha">
+      <h3>Pescado a la Plancha</h3>
+      <p>Filete fresco cocido a la plancha, acompañado de verduras al vapor y salsa ligera de limón.</p>
+      <a href="menu.php" class="btn">Ordenar</a>
+    </div>
+
+    <div class="card">
+      <img src="assets/img/calamares-rellenos.jpg" alt="Calamares Rellenos">
+      <h3>Calamares Rellenos</h3>
+      <p>Calamares rellenos de mariscos y hierbas aromáticas, con puré cremoso y reducción de vino blanco.</p>
+      <a href="menu.php" class="btn">Pedir Ahora</a>
+    </div>
+
+    <div class="card">
+      <img src="assets/img/chupe-camarones.jpg" alt="Chupe de Camarones">
+      <h3>Chupe de Camarones</h3>
+      <p>Sopa cremosa peruana con camarones, papa, choclo y hierbas aromáticas, reconfortante y llena de sabor.</p>
+      <a href="menu.php" class="btn">Ver Menú</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===================== SECCIÓN PROMOCIONES ==================== -->
+<section id="promociones" class="promociones sea-algae">
+    <h2>Promociones del Día</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="assets/img/combo1.jpg" alt="Combo 1">
+            <h3>Combo Mar y Tierra</h3>
+            <p>Incluye ceviche mixto + bebida.</p>
+            <a href="menu.php" class="btn">Ordenar</a>
+        </div>
+        <div class="card">
+            <img src="assets/img/combo2.jpg" alt="Combo 2">
+            <h3>Combo Tradicional</h3>
+            <p>Ceviche clásico + chicha morada.</p>
+            <a href="menu.php" class="btn">Ordenar</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== MENÚ COMPLETO ==================== -->
+<section id="menu" class="menu sea-algae">
+    <h2>Platos Principales</h2>
+
+    <div class="cards-grid">
+        <!-- Fila 1 -->
+        <div class="card">
+            <img src="assets/img/arrozpollo.png" alt="Arroz con Pollo">
+            <h3>Arroz con Pollo</h3>
+            <p>El sabor peruano que nunca falla.</p>
+            <a href="menu.php" class="btn">Pedir Ahora</a>
+        </div>
+
+        <div class="card">
+            <img src="assets/img/tallarinespollo.webp" alt="Tallarines con Pollo">
+            <h3>Tallarines con Pollo</h3>
+            <p>Deliciosos tallarines con jugoso pollo salteado.</p>
+            <a href="menu.php" class="btn">Pedir Ahora</a>
+        </div>
+
+        <div class="card">
+            <img src="assets/img/ajidegallina.jpg" alt="Ají de Gallina">
+            <h3>Ají de Gallina</h3>
+            <p>Crema suave de pollo deshilachado con sabor auténtico.</p>
+            <a href="menu.php" class="btn">Pedir Ahora</a>
+        </div>
+
+        <div class="card">
+            <img src="assets/img/estofadopollo.webp" alt="Estofado de Pollo">
+            <h3>Estofado de Pollo</h3>
+            <p>Pollo cocido en salsa casera con verduras frescas.</p>
+            <a href="menu.php" class="btn">Pedir Ahora</a>
+        </div>
+
+        <!-- Fila 2 -->
+        <div class="card">
+            <img src="assets/img/lomitosaltado.avif" alt="Lomito Saltado">
+            <h3>Lomito Saltado</h3>
+            <p>Jugoso lomito con verduras y salsa tradicional.</p>
+            <a href="menu.php" class="btn">Pedir Ahora</a>
+        </div>
+
+        <div class="card">
+            <img src="assets/img/tallarínverde.webp" alt="Tallarín Verde">
+            <h3>Tallarín Verde</h3>
+            <p>Pasta con salsa de albahaca y espinaca, cremosa y deliciosa.</p>
+            <a href="menu.php" class="btn">Pedir Ahora</a>
+        </div>
+
+        <div class="card">
+            <img src="assets/img/allarin-saltado.png" alt="Tallarín Saltado">
+            <h3>Tallarín Saltado</h3>
+            <p>Salteado al estilo peruano con carne y verduras frescas.</p>
+            <a href="menu.php" class="btn">Pedir Ahora</a>
+        </div>
+
+        <div class="card">
+            <img src="assets/img/estofadodepollo.webp" alt="Mechado de Pollo">
+            <h3>Mechado de Pollo</h3>
+            <p>Pollo deshilachado en salsa cremosa con un toque casero.</p>
+            <a href="menu.php" class="btn">Pedir Ahora</a>
+        </div>
+    </div>
+
+    <!-- ===================== PLATOS FRITOS ==================== -->
+    <h2>Frituras</h2>
+
+    <div class="cards-grid">
+        <!-- Fila 1 -->
+        <div class="card">
+            <img src="assets/img/tilapia.png" alt="Tilapia Frita">
+            <h3>Tilapia Frita</h3>
+            <p>Fresca y dorada, perfecta para compartir.</p>
+            <a href="menu.php" class="btn">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="assets/img/chuleta.avif" alt="Chuleta Frita">
+            <h3>Chuleta Frita</h3>
+            <p>Crocante y jugosa, un clásico infaltable.</p>
+            <a href="menu.php" class="btn">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="assets/img/milanesa.jpg" alt="Milanesa">
+            <h3>Milanesa</h3>
+            <p>Tierna y dorada, ideal con papas fritas.</p>
+            <a href="menu.php" class="btn">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="assets/img/pollofrito.png" alt="Pollo Frito">
+            <h3>Pollo Frito</h3>
+            <p>Crocante por fuera, jugoso por dentro.</p>
+            <a href="menu.php" class="btn">Ordenar</a>
+        </div>
+
+        <!-- Fila 2 -->
+        <div class="card">
+            <img src="assets/img/cecina.jpg" alt="Cecina Frita">
+            <h3>Cecina Frita</h3>
+            <p>Auténtico sabor regional y textura perfecta.</p>
+            <a href="menu.php" class="btn">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="assets/img/chicharrondepollo.avif" alt="Chicharrón de Pollo">
+            <h3>Chicharrón de Pollo</h3>
+            <p>Crocante y jugoso, ideal para compartir.</p>
+            <a href="menu.php" class="btn">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="assets/img/chicharronchancho.jpg" alt="Chicharrón de Chancho">
+            <h3>Chicharrón de Chancho</h3>
+            <p>Delicioso y tradicional, sabor casero.</p>
+            <a href="menu.php" class="btn">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="assets/img/trucha.avif" alt="Trucha Frita">
+            <h3>Trucha Frita</h3>
+            <p>Fresca, dorada y lista para disfrutar.</p>
+            <a href="menu.php" class="btn">Ordenar</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== REFRESCOS ==================== -->
+<section id="refrescos" class="section bebidas">
+  <h2>Refrescos Naturales</h2>
+
+  <div class="cards-grid">
+    <div class="card">
+      <img src="assets/img/cocona.webp" alt="Refresco de Cocona">
+      <h3>Cocona</h3>
+      <p>Fresco y tropical, ideal para acompañar tu comida.</p>
+      <a href="menu.php" class="btn">Pedir Ahora</a>
+    </div>
+
+    <div class="card">
+      <img src="assets/img/maracuya.jpg" alt="Refresco de Maracuyá">
+      <h3>Maracuyá</h3>
+      <p>Exquisito, ácido-dulce y refrescante.</p>
+      <a href="menu.php" class="btn">Pedir Ahora</a>
+    </div>
+
+    <div class="card">
+      <img src="assets/img/chicha.jpg" alt="Chicha Morada">
+      <h3>Chicha Morada</h3>
+      <p>Tradicional, dulce y lleno de sabor peruano.</p>
+      <a href="menu.php" class="btn">Pedir Ahora</a>
+    </div>
+
+    <div class="card">
+      <img src="assets/img/cebadaa.jpg" alt="Refresco de Cebada">
+      <h3>Cebada</h3>
+      <p>Refrescante y natural, perfecta para el calor.</p>
+      <a href="menu.php" class="btn">Pedir Ahora</a>
+    </div>
+
+    <div class="card">
+      <img src="assets/img/carambolaa.jpg" alt="Refresco de Carambola">
+      <h3>Carambola</h3>
+      <p>Exótico y dulce, con un toque tropical.</p>
+      <a href="menu.php" class="btn">Pedir Ahora</a>
+    </div>
+
+    <div class="card">
+      <img src="assets/img/pina.webp" alt="Refresco de Piña">
+      <h3>Piña</h3>
+      <p>Clásico refrescante con aroma y sabor a fruta natural.</p>
+      <a href="menu.php" class="btn">Pedir Ahora</a>
+    </div>
+
+    <div class="card">
+      <img src="assets/img/lomonada.webp" alt="Limonada">
+      <h3>Limonada</h3>
+      <p>Refrescante y cítrica, perfecta para cualquier plato.</p>
+      <a href="menu.php" class="btn">Pedir Ahora</a>
+    </div>
+
+    <div class="card">
+      <img src="assets/img/camu-camu.jpg" alt="Refresco de Camu Camu">
+      <h3>Camu Camu</h3>
+      <p>Rico en vitamina C, ácido y energizante.</p>
+      <a href="menu.php" class="btn">Pedir Ahora</a>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ===================== SECCIÓN SOBRE NOSOTROS ==================== -->
+<section class="section about">
+  <h2>Acerca de Nosotros</h2>
+  <p>
+    Somos una cevichería peruana que fusiona tradición marina,
+    ingredientes frescos y una experiencia gastronómica moderna.
+    Nuestra pasión por la cocina nos impulsa a ofrecer platos que
+    combinan sabores auténticos con presentaciones innovadoras,
+    cuidando cada detalle desde la selección de los mariscos
+    hasta la decoración de cada plato. 
+  </p>
+  <p>
+    Cada visita es una experiencia única: buscamos que nuestros
+    clientes disfruten de un ambiente acogedor y elegante mientras
+    descubren la riqueza de la gastronomía peruana. Desde ceviches
+    clásicos hasta preparaciones especiales de temporada, nuestro
+    compromiso es brindar calidad, sabor y frescura en cada bocado.
+  </p>
+</section>
+
+
+<!-- ===================== TESTIMONIOS ==================== -->
+<section id="testimonios" class="testimonios">
+    <h2>Opiniones de Nuestros Clientes</h2>
+    <div class="cards">
+        <div class="card">
+            <p>"El ceviche es increíble, ¡fresco y delicioso!"</p>
+            <h4>- Ana R.</h4>
+        </div>
+        <div class="card">
+            <p>"Me encanta el ambiente futurista y los sabores auténticos."</p>
+            <h4>- Carlos M.</h4>
+        </div>
+        <div class="card">
+            <p>"Siempre pido el combo del día, súper recomendable."</p>
+            <h4>- Julia F.</h4>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== EQUIPO ==================== -->
+<section id="equipo" class="equipo">
+  <h2>Historia de la Chef</h2>
+
+  <p class="historia-intro">
+    Pasión por el mar, respeto por la tradición y amor por la cocina peruana.
+    Así nace la historia de nuestra chef, reflejada en cada plato.
+  </p>
+
+  <div class="equipo-layout">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="chef-principal">
+      <img src="assets/img/chef.jpg" alt="Chef Teresa Goicochea">
+      <h3>Chef Teresa Goicochea</h3>
+      <p>
+        Especialista en cocina marina peruana, reconocida por reinterpretar
+        los sabores tradicionales con una visión moderna y creativa.
+      </p>
+    </div>
+
+    <!-- CARDS PEQUEÑAS -->
+    <div class="chef-info">
+
+      <div class="info-card">
+        <img src="assets/img/upc.webp" alt="Estudios">
+        <h4>Estudios</h4>
+        <p>Graduada en Gastronomía con especialización en cocina marina.</p>
+      </div>
+
+      <div class="info-card">
+        <img src="assets/img/comienzos.jpg" alt="Inicios">
+        <h4>Cómo Empezó</h4>
+        <p>Desde joven descubrió su pasión con recetas familiares.</p>
+      </div>
+
+      <div class="info-card">
+        <img src="assets/img/experiencie.webp" alt="Experiencia">
+        <h4>Experiencia</h4>
+        <p>Trayectoria en restaurantes nacionales e internacionales.</p>
+      </div>
+
+      <div class="info-card">
+        <img src="assets/img/futuro.jpg" alt="Visión">
+        <h4>Visión</h4>
+        <p>Llevar los sabores del Perú al mundo con identidad.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ===================== CONTACTO ==================== -->
+<section id="contact" class="contacto">
+    <h2>Contáctanos / Reserva</h2>
+   <form action="procesar_contacto.php" method="POST">
+
+    <input type="text" name="nombre" placeholder="Nombre" required>
+
+    <input type="email" name="correo" placeholder="Correo electrónico" required>
+
+    <textarea name="mensaje" placeholder="Tu mensaje o pedido" required></textarea>
+
+    <button type="submit">Enviar</button>
+
+</form>
+
+</section>
+
+<!-- ===================== FOOTER ==================== -->
+<footer>
+    <div class="footer-content">
+
+        <h3>Cevichería El Sabor Marino</hh3>
+
+        <p class="footer-description">
+            Sabores auténticos del mar peruano con un toque moderno.
+            Frescura, calidad y pasión en cada plato.
+        </p>
+
+        <div class="footer-info">
+            <p><strong> Dirección:</strong> Av. Principal 123 – Lima, Perú</p>
+            <p><strong> Horario:</strong> Lunes a Domingo – 11:00 AM a 10:00 PM</p>
+            <p><strong> Teléfono:</strong> +51 999 999 999</p>
+            <p><strong> Email:</strong> contacto@elsabormarino.pe</p>
+        </div>
+
+        <p class="footer-social-title">Síguenos y contáctanos:</p>
+
+        <div class="footer-icons">
+            <a href="https://facebook.com" target="_blank">
+                <img src="assets/img/facebook.webp" alt="Facebook">
+            </a>
+            <a href="https://wa.me/51999999999" target="_blank">
+                <img src="assets/img/WhatsApp.png" alt="Whatsapp">
+            </a>
+            <a href="tel:+51999999999">
+                <img src="assets/img/phone.webp" alt="Teléfono">
+            </a>
+        </div>
+
+        <p class="copy">
+            © 2025 Cevichería El Sabor Marino – Todos los derechos reservados.
+        </p>
+
+    </div>
+</footer>
+
+    </div> 
+<script src="assets/js/carrusel.js"></script>
+</body>
+</html>
