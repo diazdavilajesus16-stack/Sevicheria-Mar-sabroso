@@ -440,19 +440,22 @@
 <!-- ===================== CONTACTO ==================== -->
 <section id="contact" class="contacto">
     <h2>Contáctanos / Reserva</h2>
-   <form action="procesar_contacto.php" method="POST">
 
-    <input type="text" name="nombre" placeholder="Nombre" required>
+    <form id="formContacto">
 
-    <input type="email" name="correo" placeholder="Correo electrónico" required>
+        <input type="text" id="nombre" placeholder="Nombre completo" required>
 
-    <textarea name="mensaje" placeholder="Tu mensaje o pedido" required></textarea>
+        <input type="email" id="correo" placeholder="Correo electrónico" required>
 
-    <button type="submit">Enviar</button>
+        <textarea id="mensaje" placeholder="Tu mensaje o pedido" required></textarea>
 
-</form>
+        <button type="submit">Enviar Reserva</button>
 
+        <p id="respuesta" class="respuesta"></p>
+
+    </form>
 </section>
+
 
 <!-- ===================== FOOTER ==================== -->
 <footer>
@@ -493,7 +496,38 @@
     </div>
 </footer>
 
-    </div> 
+   </div> 
+
 <script src="assets/js/carrusel.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    const formulario = document.getElementById("formContacto");
+
+    if(formulario){
+        formulario.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let nombre = document.getElementById("nombre").value;
+            let correo = document.getElementById("correo").value;
+            let mensaje = document.getElementById("mensaje").value;
+
+            if(nombre && correo && mensaje){
+                document.getElementById("respuesta").innerHTML = 
+                    "🌊 Gracias " + nombre + ", tu reserva fue enviada con éxito.";
+
+                this.reset();
+            } else {
+                document.getElementById("respuesta").innerHTML = 
+                    "⚠️ Por favor completa todos los campos.";
+            }
+        });
+    }
+
+});
+</script>
+
 </body>
 </html>
+
