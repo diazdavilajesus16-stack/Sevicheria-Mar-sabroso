@@ -1,0 +1,10 @@
+SEVICHERIA/
+│
+├── assets/
+│   ├── css/
+│   ├── img/
+│   └── js/
+│
+├── Dockerfile
+├── docker-compose.yml
+├── index.html
