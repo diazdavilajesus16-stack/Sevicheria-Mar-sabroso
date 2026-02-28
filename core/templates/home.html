@@ -1,0 +1,271 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cevichería - El Sabor Marino</title>
+
+    <!-- FUENTE POPPINS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="{% static 'assets/css/estilo.css' %}">
+</head>
+<body>
+<div class="wrapper">
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="navbar">
+    <div class="logo">
+    <img src="{% static 'assets/img/logom.png' %}" alt="Logo Cevichería">
+</div>
+
+    <nav>
+        <a href="#home">Inicio</a>
+        <a href="#menu">Platos</a>
+        <a href="#promociones">Promociones</a>
+        <a href="#about">Acerca</a>
+        <a href="#contact">Contacto</a>
+    </nav>
+</header>
+
+<!-- ===================== CARRUSEL ===================== -->
+<section id="home" class="carousel-premium">
+  <div class="carousel-track">
+    <div class="carousel-slide slide-1">
+      <div class="slide-content">
+        <h2>EL VERDADERO SABOR DEL MAR</h2>
+        <p>Ceviches frescos preparados al momento, como en la costa peruana.</p>
+        <a href="#menu" class="btn-cta">Ver Platos</a>
+      </div>
+    </div>
+    <div class="carousel-slide slide-2">
+      <div class="slide-content">
+        <h2>CEVICHES PREMIUM</h2>
+        <p>Pescado fresco del día, marinado con limón recién exprimido.</p>
+        <a href="#menu" class="btn-cta">Ordenar Ahora</a>
+      </div>
+    </div>
+    <div class="carousel-slide slide-3">
+      <div class="slide-content">
+        <h2>LECHE DE TIGRE</h2>
+        <p>Explosión de energía, sabor intenso y tradición peruana.</p>
+        <a href="#menu" class="btn-cta">Pedir</a>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-btn prev">❮</button>
+  <button class="carousel-btn next">❯</button>
+  <div class="carousel-dots"></div>
+</section>
+
+<!-- ===================== PLATOS DESTACADOS ===================== -->
+<section id="menu" class="scroll-reveal wave-bottom">
+  <h2>Platos Marinos</h2>
+  <div class="cards-grid">
+    <div class="card">
+      <img src="{% static 'assets/img/seviche.jpg' %}" alt="Ceviche Clásico">
+      <h3>Ceviche Clásico</h3>
+      <p>Fresco pescado del día marinado con limón, cebolla y ají, acompañado de camote y choclo.</p>
+      <a href="#" class="btn">Pedir Ahora</a>
+    </div>
+    <div class="card">
+      <img src="{% static 'assets/img/ceviche-mixto.jpg' %}" alt="Ceviche Mixto">
+      <h3>Ceviche Mixto</h3>
+      <p>Mariscos frescos combinados con el auténtico sabor peruano: camarones, calamares y pescado.</p>
+      <a href="#" class="btn">Ver Menú</a>
+    </div>
+    <div class="card">
+      <img src="{% static 'assets/img/pulpo.webp' %}" alt="Pulpo a la Parrilla">
+      <h3>Pulpo a la Parrilla</h3>
+      <p>Tentáculos de pulpo cocinados a la parrilla con aceite de oliva, especias y ensalada fresca.</p>
+      <a href="#" class="btn">Ordenar</a>
+    </div>
+    <div class="card">
+      <img src="{% static 'assets/img/langostinos.jpg' %}" alt="Langostinos al Ajillo">
+      <h3>Langostinos al Ajillo</h3>
+      <p>Langostinos salteados en mantequilla y ajo con un toque de limón y perejil fresco.</p>
+      <a href="#" class="btn">Pedir Ahora</a>
+    </div>
+    <div class="card">
+      <img src="{% static 'assets/img/arroz-mariscos.jpg' %}" alt="Arroz con Mariscos">
+      <h3>Arroz con Mariscos</h3>
+      <p>Arroz amarillo con camarones, calamares y mejillones, cocinado con hierbas y especias del mar.</p>
+      <a href="#" class="btn">Ver Menú</a>
+    </div>
+    <div class="card">
+      <img src="{% static 'assets/img/pescado-plancha.jpg' %}" alt="Pescado a la Plancha">
+      <h3>Pescado a la Plancha</h3>
+      <p>Filete fresco cocido a la plancha, acompañado de verduras al vapor y salsa ligera de limón.</p>
+      <a href="#" class="btn">Ordenar</a>
+    </div>
+    <div class="card">
+      <img src="{% static 'assets/img/calamares-rellenos.jpg' %}" alt="Calamares Rellenos">
+      <h3>Calamares Rellenos</h3>
+      <p>Calamares rellenos de mariscos y hierbas aromáticas, con puré cremoso y reducción de vino blanco.</p>
+      <a href="#" class="btn">Pedir Ahora</a>
+    </div>
+    <div class="card">
+      <img src="{% static 'assets/img/chupe-camarones.jpg' %}" alt="Chupe de Camarones">
+      <h3>Chupe de Camarones</h3>
+      <p>Sopa cremosa peruana con camarones, papa, choclo y hierbas aromáticas, reconfortante y llena de sabor.</p>
+      <a href="#" class="btn">Ver Menú</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROMOCIONES ===================== -->
+<section id="promociones" class="scroll-left wave-bottom">
+  <h2>Promociones del Día</h2>
+  <div class="cards-grid">
+    <div class="card">
+      <img src="{% static 'assets/img/combo1.jpg' %}" alt="Combo Mar y Tierra">
+      <h3>Combo Mar y Tierra</h3>
+      <p>Incluye ceviche mixto + bebida.</p>
+      <a href="#" class="btn">Ordenar</a>
+    </div>
+    <div class="card">
+      <img src="{% static 'assets/img/combo2.jpg' %}" alt="Combo Tradicional">
+      <h3>Combo Tradicional</h3>
+      <p>Ceviche clásico + chicha morada.</p>
+      <a href="#" class="btn">Ordenar</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOBRE NOSOTROS ===================== -->
+<section id="about" class="scroll-reveal wave-top wave-bottom">
+  <h2>Acerca de Nosotros</h2>
+
+  <p>
+    Somos una cevichería 
+    <span style="color:#00e5ff;">peruana</span> 
+    que fusiona tradición marina, ingredientes frescos y una experiencia gastronómica moderna.
+  </p>
+
+  <p>
+    Cada visita es una 
+    <span style="color:#00e5ff;">experiencia única</span>: 
+    buscamos que nuestros clientes disfruten de un ambiente acogedor.
+  </p>
+</section>
+
+<!-- ===================== EQUIPO ===================== -->
+<section id="equipo" class="scroll-left wave-top wave-bottom">
+  <h2>Historia de la Chef</h2>
+  <div class="equipo-layout">
+    <div class="chef-principal">
+      <img src="{% static 'assets/img/chef.jpg' %}" alt="Chef Teresa Goicochea">
+      <h3>Chef Teresa Goicochea</h3>
+      <p>Especialista en cocina marina peruana, reconocida por reinterpretar los sabores tradicionales con una visión moderna y creativa.</p>
+    </div>
+    <div class="chef-info">
+      <div class="info-card">
+        <img src="{% static 'assets/img/upc.webp' %}" alt="Estudios">
+        <h4>Estudios</h4>
+        <p>Graduada en Gastronomía con especialización en cocina marina.</p>
+      </div>
+      <div class="info-card">
+        <img src="{% static 'assets/img/comienzos.jpg' %}" alt="Inicios">
+        <h4>Cómo Empezó</h4>
+        <p>Desde joven descubrió su pasión con recetas familiares.</p>
+      </div>
+      <div class="info-card">
+        <img src="{% static 'assets/img/experiencie.webp' %}" alt="Experiencia">
+        <h4>Experiencia</h4>
+        <p>Trayectoria en restaurantes nacionales e internacionales.</p>
+      </div>
+      <div class="info-card">
+        <img src="{% static 'assets/img/futuro.jpg' %}" alt="Visión">
+        <h4>Visión</h4>
+        <p>Llevar los sabores del Perú al mundo con identidad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACTO ===================== -->
+<section id="contact" class="scroll-right wave-top">
+  <h2>Contáctanos / Reserva</h2>
+  <form id="formContacto">
+    <input type="text" id="nombre" placeholder="Nombre completo" required>
+    <input type="email" id="correo" placeholder="Correo electrónico" required>
+    <textarea id="mensaje" placeholder="Tu mensaje o pedido" required></textarea>
+    <button type="submit">Enviar Reserva</button>
+    <p id="respuesta" class="respuesta"></p>
+  </form>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="footer-content">
+    <h3>Cevichería El Sabor Marino</h3>
+    <p>Sabores auténticos del mar peruano con un toque moderno. Frescura, calidad y pasión en cada plato.</p>
+    <div class="footer-info">
+      <p><strong>Dirección:</strong> Av. Principal 123 – Lima, Perú</p>
+      <p><strong>Horario:</strong> Lunes a Domingo – 11:00 AM a 10:00 PM</p>
+      <p><strong>Teléfono:</strong> +51 999 999 999</p>
+      <p><strong>Email:</strong> contacto@elsabormarino.pe</p>
+    </div>
+    <div class="footer-icons">
+      <a href="#"><img src="{% static 'assets/img/facebook.webp' %}" alt="Facebook"></a>
+      <a href="#"><img src="{% static 'assets/img/WhatsApp.png' %}" alt="Whatsapp"></a>
+      <a href="#"><img src="{% static 'assets/img/phone.webp' %}" alt="Teléfono"></a>
+    </div>
+    <p class="copy">© 2025 Cevichería El Sabor Marino – Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script src="{% static 'assets/js/carrusel.js' %}"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const formulario = document.getElementById("formContacto");
+    if(formulario){
+        formulario.addEventListener("submit", function(e){
+            e.preventDefault();
+            let nombre = document.getElementById("nombre").value;
+            let correo = document.getElementById("correo").value;
+            let mensaje = document.getElementById("mensaje").value;
+            if(nombre && correo && mensaje){
+                document.getElementById("respuesta").innerHTML = "🌊 Gracias " + nombre + ", tu reserva fue enviada con éxito.";
+                this.reset();
+            } else {
+                document.getElementById("respuesta").innerHTML = "⚠️ Por favor completa todos los campos.";
+            }
+        });
+    }
+});
+</script>
+
+</div>
+</body>
+<script>
+// ===================== SCROLL REVEAL =====================
+const scrollElements = document.querySelectorAll('.scroll-reveal, .scroll-left, .scroll-right');
+
+const elementInView = (el, offset = 100) => {
+    const elementTop = el.getBoundingClientRect().top;
+    return elementTop <= (window.innerHeight - offset);
+};
+
+const displayScrollElement = (element) => {
+    element.classList.add('show');
+};
+
+const hideScrollElement = (element) => {
+    element.classList.remove('show');
+};
+
+const handleScrollAnimation = () => {
+    scrollElements.forEach(el => {
+        if (elementInView(el, 150)) {
+            displayScrollElement(el);
+        }
+    });
+};
+
+window.addEventListener('scroll', () => { handleScrollAnimation(); });
+window.addEventListener('load', () => { handleScrollAnimation(); });
+</script>
+</html>
