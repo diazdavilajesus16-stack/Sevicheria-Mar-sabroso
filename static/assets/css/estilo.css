@@ -1,0 +1,1161 @@
+/* =====================================================
+RESET GENERAL
+===================================================== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+/* FONDO PROFUNDO */
+body{
+  margin:0;
+   padding-top: 100px;
+  font-family:"Poppins", sans-serif;
+  background: radial-gradient(circle at top, #0a2a3a, #02141f 80%);
+  overflow-x:hidden;
+}
+
+/* CONTENEDOR */
+.ocean-pro{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  pointer-events:none;
+  z-index:-1;
+}
+
+/* ================= BURBUJAS ================= */
+/* Contenedor de burbujas */
+.bubbles {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Ajusta a tu área */
+  overflow: hidden;
+  background: rgba(0,0,50,0.1); /* opcional solo para ver el contenedor */
+}
+
+/* Estilo general de burbujas */
+.bubbles span {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.6));
+}
+
+/* Tamaños y posiciones */
+.bubbles span:nth-child(1) { width:10px; height:10px; opacity:0.2; left:10%; animation: rise1 6s linear infinite; animation-delay: 0s; }
+.bubbles span:nth-child(2) { width:15px; height:15px; opacity:0.3; left:30%; animation: rise2 7s linear infinite; animation-delay: 1s; }
+.bubbles span:nth-child(3) { width:20px; height:20px; opacity:0.25; left:50%; animation: rise3 8s linear infinite; animation-delay: 2s; }
+.bubbles span:nth-child(4) { width:12px; height:12px; opacity:0.15; left:70%; animation: rise4 9s linear infinite; animation-delay: 0.5s; }
+.bubbles span:nth-child(5) { width:18px; height:18px; opacity:0.35; left:90%; animation: rise5 10s linear infinite; animation-delay: 1.5s; }
+
+/* Animaciones usando px para que se mueva seguro */
+@keyframes rise1 {
+  0%   { transform: translate(0,0) scale(1); }
+  50%  { transform: translateX(-5px) translateY(-250px) scale(1.2); }
+  100% { transform: translateX(3px) translateY(-500px) scale(1.5); }
+}
+@keyframes rise2 {
+  0%   { transform: translate(0,0) scale(1); }
+  50%  { transform: translateX(4px) translateY(-280px) scale(1.2); }
+  100% { transform: translateX(-3px) translateY(-500px) scale(1.5); }
+}
+@keyframes rise3 {
+  0%   { transform: translate(0,0) scale(1); }
+  50%  { transform: translateX(-3px) translateY(-220px) scale(1.2); }
+  100% { transform: translateX(2px) translateY(-500px) scale(1.5); }
+}
+@keyframes rise4 {
+  0%   { transform: translate(0,0) scale(1); }
+  50%  { transform: translateX(2px) translateY(-210px) scale(1.2); }
+  100% { transform: translateX(-2px) translateY(-500px) scale(1.5); }
+}
+@keyframes rise5 {
+  0%   { transform: translate(0,0) scale(1); }
+  50%  { transform: translateX(-4px) translateY(-230px) scale(1.2); }
+  100% { transform: translateX(3px) translateY(-500px) scale(1.5); }
+}
+/* ================= PECES ================= */
+.fish{
+  position:absolute;
+  filter: drop-shadow(0 0 8px rgba(0,150,255,0.6));
+  width:80px;
+  height:80px;
+  opacity:0.9;
+  transition: transform 0.3s ease-in-out;
+  animation: swimRight 18s ease-in-out infinite;
+}
+
+/* Peces individuales */
+.fish1 { top: 10%; animation: swimRight 18s ease-in-out infinite; }
+.fish2 { top: 20%; animation: swimLeft 20s ease-in-out infinite; }
+.fish3 { top: 30%; animation: swimRight 22s ease-in-out infinite; }
+.fish4 { top: 40%; animation: swimLeft 24s ease-in-out infinite; }
+.fish5 { top: 50%; animation: swimRight 26s ease-in-out infinite;}
+.fish6 { top: 60%; animation: swimLeft 28s ease-in-out infinite; }
+.fish7 { top: 70%; animation: swimRight 30s ease-in-out infinite; }
+.fish8 { top: 80%; animation: swimLeft 32s ease-in-out infinite; }
+.fish9 { top: 90%; animation: swimRight 34s ease-in-out infinite; }
+/* Movimiento derecha */
+@keyframes swimRight {
+  0%   { left: -100px; top: 10%; transform: rotate(0deg); }
+  25%  { left: 25%; top: 15%; transform: rotate(5deg); }
+  50%  { left: 50%; top: 10%; transform: rotate(0deg); }
+  75%  { left: 75%; top: 5%; transform: rotate(-5deg); }
+  100% { left: 100vw; top: 10%; transform: rotate(0deg); }
+}
+
+@keyframes swimLeft {
+  0%   { left: 100vw; top: 50%; transform: scaleX(-1) rotate(0deg); }
+  25%  { left: 75%; top: 55%; transform: scaleX(-1) rotate(5deg); }
+  50%  { left: 50%; top: 50%; transform: scaleX(-1) rotate(0deg); }
+  75%  { left: 25%; top: 45%; transform: scaleX(-1) rotate(-5deg); }
+  100% { left: -100px; top: 50%; transform: scaleX(-1) rotate(0deg); }
+}
+.fish1 { animation-delay: 0s; }
+.fish2 { animation-delay: 2s; }
+.fish3 { animation-delay: 4s; }
+.fish4 { animation-delay: 1s; }
+.fish5 { animation-delay: 3s; }
+.fish6 { animation-delay: 5s; }
+.fish7 { animation-delay: 0.5s; }
+.fish8 { animation-delay: 2.5s; }
+.fish9 { animation-delay: 4.5s; }
+
+
+
+/* ================= ALGAS ================= */
+
+
+/* Contenedores de algas y plantas */
+.seaweed, .plant {
+  position: absolute;
+  bottom: 0; /* esto hace que se vean desde abajo */
+  transform-origin: bottom center;
+}
+
+.seaweed span, .plant span {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  border-radius: 50% 50% 20% 20%;
+ filter: drop-shadow(0 0 4px rgba(0,0,0,0.5));
+  animation: sway 4s ease-in-out infinite;
+}
+/* ================= ALGAS Y PLANTAS GRANDES ================= */
+
+/* Posición horizontal y profundidad */
+/* ================= ACUARIO REPLETO DE ALGAS Y PLANTAS ================= */
+
+/* Posiciones horizontales y profundidad */
+.phaeo1 { left: 3%;  z-index:1; }
+.phaeo2 { left: 10%; z-index:1; }
+.phaeo3 { left: 18%; z-index:1; }
+.phaeo4 { left: 25%; z-index:2; }
+.phaeo5 { left: 32%; z-index:2; }
+.phaeo6 { left: 40%; z-index:2; }
+.phaeo7 { left: 47%; z-index:3; }
+.phaeo8 { left: 55%; z-index:3; }
+.phaeo9 { left: 62%; z-index:3; }
+.phaeo10{ left: 70%; z-index:3; }
+.phaeo11 { left: 77%; z-index:3; }
+.phaeo12 { left: 85%; z-index:3; }
+.phaeo13 { left: 92%; z-index:3; }
+
+.plant1  { left: 5%;  z-index:2; }
+.plant2  { left: 12%; z-index:2; }
+.plant3  { left: 20%; z-index:2; }
+.plant4  { left: 28%; z-index:3; }
+.plant5  { left: 36%; z-index:3; }
+.plant6  { left: 44%; z-index:3; }
+.plant7  { left: 52%; z-index:3; }
+.plant8  { left: 60%; z-index:3; }
+.plant9  { left: 68%; z-index:3; }
+.plant10 { left: 75%; z-index:3; }
+.plant11 { left: 82%; z-index:3; }
+.plant12 { left: 90%; z-index:3; }
+.plant13 { left: 95%; z-index:3; }
+.plant14 { left: 97%; z-index:3; }
+.plant15 { left: 100%; z-index:3; }
+
+/* ===== PHAEOPHYCEAE GRANDES ===== */
+.phaeo1 span:nth-child(1){ width:12px; height:240px; background:#4b3b2b; animation-delay:0s; }
+.phaeo1 span:nth-child(2){ width:10px; height:220px; background:#5c4a36; left:6px; animation-delay:0.3s; }
+.phaeo1 span:nth-child(3){ width:8px; height:200px; background:#6d5c48; left:-5px; animation-delay:0.6s; }
+
+.phaeo2 span:nth-child(1){ width:10px; height:220px; background:#3f2e1f; animation-delay:0s; }
+.phaeo2 span:nth-child(2){ width:8px; height:200px; background:#574433; left:5px; animation-delay:0.4s; }
+.phaeo2 span:nth-child(3){ width:6px; height:180px; background:#6a5644; left:-5px; animation-delay:0.8s; }
+
+.phaeo3 span:nth-child(1){ width:14px; height:260px; background:#5a3e2b; animation-delay:0s; }
+.phaeo3 span:nth-child(2){ width:12px; height:230px; background:#6b4f3d; left:6px; animation-delay:0.3s; }
+.phaeo3 span:nth-child(3){ width:10px; height:210px; background:#4e362a; left:-6px; animation-delay:0.6s; }
+
+.phaeo4 span:nth-child(1){ width:12px; height:250px; background:#523a28; animation-delay:0s; }
+.phaeo4 span:nth-child(2){ width:10px; height:230px; background:#654d39; left:7px; animation-delay:0.4s; }
+.phaeo4 span:nth-child(3){ width:8px; height:210px; background:#4c3528; left:-5px; animation-delay:0.8s; }
+
+.phaeo5 span:nth-child(1){ width:14px; height:270px; background:#5c3b2c; animation-delay:0s; }
+.phaeo5 span:nth-child(2){ width:12px; height:240px; background:#6d4c3b; left:6px; animation-delay:0.3s; }
+.phaeo5 span:nth-child(3){ width:10px; height:220px; background:#4f362a; left:-6px; animation-delay:0.6s; }
+
+.phaeo6 span:nth-child(1){ width:16px; height:280px; background:#5f3d2d; animation-delay:0s; }
+.phaeo6 span:nth-child(2){ width:14px; height:250px; background:#6f4e3e; left:7px; animation-delay:0.4s; }
+.phaeo6 span:nth-child(3){ width:12px; height:230px; background:#50372b; left:-7px; animation-delay:0.8s; }
+
+.phaeo7 span:nth-child(1){ width:14px; height:260px; background:#5a3e2b; animation-delay:0s; }
+.phaeo7 span:nth-child(2){ width:12px; height:230px; background:#6b4f3d; left:6px; animation-delay:0.3s; }
+.phaeo7 span:nth-child(3){ width:10px; height:210px; background:#4e362a; left:-6px; animation-delay:0.6s; }
+
+.phaeo8 span:nth-child(1){ width:12px; height:250px; background:#523a28; animation-delay:0s; }
+.phaeo8 span:nth-child(2){ width:10px; height:230px; background:#654d39; left:7px; animation-delay:0.4s; }
+.phaeo8 span:nth-child(3){ width:8px; height:210px; background:#4c3528; left:-5px; animation-delay:0.8s; }
+
+.phaeo9 span:nth-child(1){ width:16px; height:280px; background:#5f3d2d; animation-delay:0s; }
+.phaeo9 span:nth-child(2){ width:14px; height:250px; background:#6f4e3e; left:7px; animation-delay:0.4s; }
+.phaeo9 span:nth-child(3){ width:12px; height:230px; background:#50372b; left:-7px; animation-delay:0.8s; }
+
+.phaeo10 span:nth-child(1){ width:14px; height:260px; background:#5a3e2b; animation-delay:0s; }
+.phaeo10 span:nth-child(2){ width:12px; height:230px; background:#6b4f3d; left:6px; animation-delay:0.3s; }
+.phaeo10 span:nth-child(3){ width:10px; height:210px; background:#4e362a; left:-6px; animation-delay:0.6s; }
+
+.phaeo11 span:nth-child(1){ width:14px; height:260px; background:#5a3e2b; animation-delay:0s; }
+.phaeo11 span:nth-child(2){ width:12px; height:230px; background:#6b4f3d; left:6px; animation-delay:0.3s; }
+.phaeo11 span:nth-child(3){ width:10px; height:210px; background:#4e362a; left:-6px; animation-delay:0.6s; }
+
+
+/* ===== PLANTAS VERDES, MORADAS Y COLORIDAS ===== */
+.plant1 span:nth-child(1){ width:10px; height:150px; background:#2e8b57; animation-delay:0s;}
+.plant1 span:nth-child(2){ width:8px; height:130px; background:#3cb371; left:5px; animation-delay:0.3s;}
+.plant1 span:nth-child(3){ width:6px; height:120px; background:#66cdaa; left:-4px; animation-delay:0.6s;}
+
+.plant2 span:nth-child(1){ width:12px; height:160px; background:#228b22; animation-delay:0s;}
+.plant2 span:nth-child(2){ width:10px; height:140px; background:#32cd32; left:4px; animation-delay:0.4s;}
+.plant2 span:nth-child(3){ width:8px; height:130px; background:#7fff00; left:-3px; animation-delay:0.8s;}
+
+.plant3 span:nth-child(1){ width:10px; height:170px; background:#20b2aa; animation-delay:0s;}
+.plant3 span:nth-child(2){ width:8px; height:150px; background:#3cb371; left:3px; animation-delay:0.3s;}
+.plant3 span:nth-child(3){ width:6px; height:140px; background:#66cdaa; left:-2px; animation-delay:0.6s;}
+
+.plant4 span:nth-child(1){ width:12px; height:180px; background:#8a2be2; animation-delay:0s;}
+.plant4 span:nth-child(2){ width:10px; height:160px; background:#9370db; left:4px; animation-delay:0.4s;}
+.plant4 span:nth-child(3){ width:8px; height:140px; background:#ba55d3; left:-3px; animation-delay:0.8s;}
+
+.plant5 span:nth-child(1){ width:14px; height:190px; background:#2e8b57; animation-delay:0s;}
+.plant5 span:nth-child(2){ width:12px; height:170px; background:#3cb371; left:5px; animation-delay:0.3s;}
+.plant5 span:nth-child(3){ width:10px; height:150px; background:#66cdaa; left:-4px; animation-delay:0.6s;}
+
+/* Repite variaciones similares para plant6 a plant13 con distintos verdes y lilas */
+/* Animación de balanceo */
+.seaweed span, .plant span {
+  animation: sway 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+/* Animación ondulada */
+@keyframes sway {
+  0%,100% { transform: rotate(0deg); }
+  25%     { transform: rotate(6deg); }
+  50%     { transform: rotate(-5deg); }
+  75%     { transform: rotate(4deg); }
+}
+/* ================= LUZ AGUA ================= */
+body::after{
+  content:"";
+  position:fixed;
+  width:100%;
+  height:100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.08), transparent);
+  animation: light 8s infinite;
+}
+
+@keyframes light{
+  0%{ transform:translateX(-100%); }
+  100%{ transform:translateX(100%); }
+}
+/* =====================================================
+NAVBAR
+===================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  padding: 0 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(242, 245, 247, 0.85); /* #0077b6 con transparencia */
+  
+  background: linear-gradient(135deg, rgba(0,119,182,0.85), rgba(0,180,216,0.75));
+  
+   backdrop-filter: blur(15px); /* desenfoque del fondo */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+}
+
+/* enlaces */
+.navbar nav a {
+  color: #ffffff; /* blanco para que resalte en azul */
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 14px 26px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+/* hover con color cálido (marca) */
+.navbar nav a:hover {
+  background: #ff7b00; /* naranja más vibrante */
+  color: #fff;
+  transform: scale(1.08);
+  box-shadow: 0 6px 15px rgba(255,123,0,0.4);
+}
+.navbar::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.15), transparent);
+  pointer-events: none;
+}
+
+
+.logo {
+  display: flex;
+  justify-content: center; /* centra horizontal */
+  align-items: center;     /* centra vertical */
+  height: 180px;           /* ajusta según tu diseño */
+}
+
+.logo img {
+  height: 150px;
+  width: auto;
+  transition: 0.3s ease;
+}
+.logo {
+  padding-top: 20px;
+}
+
+.logo img:hover{
+  transform:scale(1.08);
+  filter:drop-shadow(0 0 15px rgba(0,229,255,0.8));
+}
+
+
+/* =====================================================
+CARRUSEL
+===================================================== */
+.carousel-premium{
+  position:relative;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+}
+
+.carousel-track{
+  display:flex;
+  width:100%;
+  height:100%;
+  transition:transform .6s ease-in-out;
+}
+
+.carousel-slide{
+  flex:0 0 100%;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+.carousel-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+
+  background:rgba(255,255,255,0.1);
+  border:none;
+  font-size:2.2rem;
+  color:white;
+  padding:12px 20px;
+  border-radius:50%;
+  cursor:pointer;
+
+  backdrop-filter:blur(12px);
+  transition: all .3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* efecto hover marino */
+.carousel-btn:hover{
+  background:linear-gradient(135deg,#00b4d8,#0077b6);
+  transform:translateY(-50%) scale(1.1);
+  box-shadow:0 10px 25px rgba(0,180,216,0.6);
+}
+
+/* posiciones */
+.prev{ left:30px; }
+.next{ right:30px; }
+
+/* FONDOS CON IMAGEN + OVERLAY */
+.slide-1{
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
+    url('/static/assets/img/seviche.jpg') center/cover no-repeat;
+}
+
+.slide-2{
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
+    url('/static/assets/img/ceviche-mixto.jpg') center/cover no-repeat;
+}
+
+.slide-3{
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
+    url('/static/assets/img/leche.webp') center/cover no-repeat;
+}
+
+
+/* CONTENIDO */
+.slide-content{
+  text-align:center;
+  max-width:800px;
+  padding:20px;
+  animation:fadeUp 1s ease;
+}
+
+.slide-content h2{
+  font-size:3rem;
+  font-weight:700;
+  margin-bottom:20px;
+  letter-spacing:2px;
+}
+
+.slide-content p{
+  font-size:1.3rem;
+  margin-bottom:30px;
+  color:#caf0f8; /* más suave tipo agua */
+  line-height:1.6;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* BOTÓN PREMIUM */
+.btn-cta{
+  display:inline-block;
+  padding:16px 40px;
+
+  /* 🌊 degradado más profundo */
+  background: linear-gradient(135deg, #00b4d8, #0077b6);
+
+  color:#ffffff;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:700;
+  letter-spacing:0.5px;
+
+  transition: all .4s ease;
+  box-shadow:0 10px 30px rgba(0,180,216,.5);
+  position: relative;
+  overflow: hidden;
+}
+
+/* brillo tipo agua */
+.btn-cta::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition:0.5s;
+}
+
+.btn-cta:hover::before{
+  left:100%;
+}
+
+/* hover PRO */
+.btn-cta:hover{
+  transform:translateY(-6px) scale(1.05);
+  box-shadow:0 20px 50px rgba(0,180,216,.8);
+}
+.prev{ left:30px; }
+.next{ right:30px; }
+
+/* ANIMACIÓN TEXTO */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* ===================== IMÁGENES DEL CARRUSEL ===================== */
+
+.slide-content{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-align:center;
+  z-index:2;
+}
+
+.slide-content h2{
+  font-size:3rem;
+  color:#00e5ff;
+  text-shadow:0 0 25px rgba(0,229,255,.8);
+}
+
+.slide-content p{
+  margin:20px 0;
+  font-size:1.1rem;
+}
+
+
+
+/* ================= BOTÓN ULTRA PRO ================= */
+.btn{
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+
+  background: linear-gradient(135deg, #00e5ff, #007bff);
+  color: #fff;
+
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: none;
+
+  font-weight: 600;
+  letter-spacing: .5px;
+  cursor: pointer;
+
+  transition: all .35s ease;
+
+  box-shadow: 
+    0 10px 30px rgba(0, 200, 255, 0.5),
+    inset 0 0 10px rgba(255,255,255,0.2);
+}
+
+/* LUZ */
+.btn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:120%;
+  height:100%;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.9),
+    transparent
+  );
+  transition:.7s;
+}
+
+/* HOVER */
+.btn:hover{
+  transform: translateY(-6px) scale(1.08);
+  box-shadow: 
+    0 25px 70px rgba(0, 200, 255, 0.9),
+    0 0 25px rgba(0,200,255,0.6);
+}
+
+/* ACTIVAR LUZ */
+.btn:hover::before{
+  left:120%;
+}
+
+/* CLICK */
+.btn:active{
+  transform: scale(.95);
+}
+/* =====================================================
+SECCIONES GENERALES
+===================================================== */
+section:not(.carousel-premium){
+  max-width:1200px;
+  margin:120px auto;
+  padding:80px 50px;
+  background:rgba(0,20,40,.6);
+  border-radius:30px;
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(0,229,255,.15);
+  box-shadow:0 0 50px rgba(0,229,255,.1);
+}
+
+section h2{
+  text-align:center;
+  font-size:2.5rem;
+  margin-bottom:60px;
+  color:#00e5ff;
+  text-shadow:0 0 15px rgba(0,229,255,.5);
+}
+
+/* CARD */
+.card{
+  position:relative;
+  border-radius:28px;
+  overflow:hidden;
+  max-width:320px;
+  margin:auto;
+
+  backdrop-filter: blur(10px);
+  background: rgba(0, 50, 80, 0.6);
+  border: 1px solid rgba(255,255,255,0.1);
+
+  box-shadow:0 20px 50px rgba(0,120,180,.25);
+
+  display:flex;
+  flex-direction:column;
+  height:100%;
+
+  transition:all .6s cubic-bezier(.22,1,.36,1);
+}
+
+/* Imagen */
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-top-left-radius:28px;
+  border-top-right-radius:28px;
+  transition:.5s;
+}
+
+/* Contenido */
+.card-content{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  height:100%;
+  padding:15px;
+}
+
+/* TITULO */
+.card h3{
+  margin:15px 0 10px;
+  font-size:1.3rem;
+  text-align:center;
+  color:#ffffff;
+  letter-spacing:1px;
+}
+
+/* DESCRIPCIÓN */
+.card p{
+  font-size:.95rem;
+  color:#e8faff;
+  line-height:1.6;
+  text-align:center;
+}
+
+/* 🔥 PRECIO PRO (FIX COLOR) */
+.precio{
+  color:#00e5ff !important; /* 🔥 FORZAMOS */
+  font-weight:700;
+  font-size:20px;
+  text-align:center;
+  margin:10px 0 15px;
+  text-shadow:0 0 12px rgba(0,229,255,0.7);
+}
+
+/* BOTÓN (FIX POSICIÓN) */
+.card .btn{
+  margin-top:auto;
+  align-self:center;
+}
+
+/* BOTÓN BASE */
+.btn{
+  position:relative;
+  padding:12px 25px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(135deg,#00d4ff,#0077ff);
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer;
+  overflow:hidden;
+  transition:.3s;
+}
+
+/* EFECTO LUZ DESLIZANTE */
+.btn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.6),
+    transparent
+  );
+  transition:.7s;
+}
+
+.btn:hover::before{
+  left:100%;
+}
+
+/* HOVER */
+.btn:hover{
+  transform:translateY(-5px) scale(1.05);
+  box-shadow:0 25px 60px rgba(0,200,255,.6);
+}
+
+/* CLICK */
+.btn:active{
+  transform:scale(.97);
+}
+
+/* BORDE LUMINOSO */
+.card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:28px;
+  padding:1px;
+  background:linear-gradient(120deg,#00d4ff,#0077ff,#00f5d4);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity:0;
+  transition:.5s;
+}
+
+/* LUZ ANIMADA */
+.card::before{
+  content:"";
+  position:absolute;
+  top:-100%;
+  left:-50%;
+  width:200%;
+  height:200%;
+  background:linear-gradient(120deg,transparent 40%,rgba(255,255,255,0.3),transparent 60%);
+  transform:rotate(25deg);
+  transition:.8s;
+}
+
+/* HOVER CARD */
+.card:hover{
+  transform:translateY(-15px) scale(1.06);
+  box-shadow:0 35px 80px rgba(0,180,216,.5);
+}
+
+.card:hover img{
+  transform:scale(1.15);
+}
+
+.card:hover::before{
+  top:100%;
+}
+
+.card:hover::after{
+  opacity:1;
+}
+
+/* GRID */
+.cards-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap:30px;
+  max-width:1200px;
+  margin:0 auto;
+  padding:20px;
+}
+
+
+/* =====================================================
+ABOUT
+===================================================== */
+#about p{
+  max-width:850px;
+  margin:20px auto;
+  line-height:1.8;
+  text-align:center;
+  font-size:1rem;
+  color:#d6faff;
+}
+
+/* =====================================================
+HISTORIA CHEF
+===================================================== */
+.equipo-layout{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:50px;
+  align-items:center;
+  padding:60px 0;
+}
+
+/* CHEF PRINCIPAL */
+.chef-principal{
+  text-align:center;
+  position:relative;
+}
+
+.chef-principal img{
+  width:100%;
+  max-width:350px;
+  border-radius:25px;
+  box-shadow:0 25px 60px rgba(0,180,216,.5);
+  margin-bottom:25px;
+  transition:.4s ease;
+}
+
+.chef-principal img:hover{
+  transform:scale(1.05);
+  box-shadow:0 35px 80px rgba(0,229,255,.8);
+}
+
+/* GRID DE INFO */
+.chef-info{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
+}
+
+/* TARJETAS DEL EQUIPO */
+.info-card{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(15px);
+  padding:25px;
+  border-radius:22px;
+  text-align:center;
+  transition:all .4s ease;
+  border:1px solid rgba(255,255,255,0.15);
+  box-shadow:0 15px 35px rgba(0,150,199,.3);
+  position:relative;
+  overflow:hidden;
+}
+
+.info-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg, rgba(255,255,255,0.15), transparent 60%);
+  opacity:0;
+  transition:.4s;
+}
+
+.info-card:hover{
+  transform:translateY(-10px) scale(1.04);
+  box-shadow:0 25px 60px rgba(0,229,255,.6);
+}
+
+.info-card:hover::before{
+  opacity:1;
+}
+
+.info-card img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  border-radius:15px;
+  margin-bottom:15px;
+  transition:.4s;
+}
+
+.info-card:hover img{
+  transform:scale(1.08);
+}
+
+.info-card h4{
+  color:#ffffff;
+  margin-bottom:8px;
+}
+
+.info-card p{
+  color:#e0f7ff;
+  font-size:.9rem;
+}
+
+/* =====================================================
+CONTACTO
+===================================================== */
+#contact form{
+  max-width:600px;
+  margin:auto;
+  padding:40px;
+  background:rgba(255,255,255,.05);
+  border-radius:25px;
+  backdrop-filter:blur(15px);
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  box-shadow:0 0 40px rgba(0,229,255,.2);
+}
+
+#contact input,
+#contact textarea{
+  padding:15px;
+  border-radius:15px;
+  border:1px solid rgba(0,229,255,.3);
+  background:rgba(0,0,0,.5);
+  color:#fff;
+  font-size:1rem;
+}
+
+#contact button{
+  padding:12px;
+  border:none;
+  border-radius:25px;
+  background:linear-gradient(135deg,#00e5ff,#0077ff);
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+#contact button:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 25px #00e5ff;
+}
+
+/* =====================================================
+FOOTER
+===================================================== */
+footer{
+  background:linear-gradient(180deg,#020c14,#041e2c);
+  padding:70px 20px 40px;
+  text-align:center;
+  border-top:1px solid rgba(0,229,255,.2);
+}
+
+.footer-content h3{
+  color:#00e5ff;
+  margin-bottom:15px;
+}
+
+.footer-content p{
+  margin:8px 0;
+  color:#c8faff;
+}
+
+.footer-info{
+  margin:20px 0;
+}
+
+.footer-icons{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  margin:20px 0;
+}
+
+.footer-icons a{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:rgba(0,229,255,.1);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.4s;
+}
+
+.footer-icons a img{
+  width:24px;
+}
+
+.footer-icons a:hover{
+  transform:translateY(-6px) scale(1.15);
+  background:#00e5ff;
+}
+
+.copy{
+  margin-top:20px;
+  font-size:.85rem;
+  color:#88cfff;
+}
+
+/* =====================================================
+RESPONSIVE
+===================================================== */
+@media(max-width:1024px){
+  .cards-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .equipo-layout{
+    grid-template-columns:1fr;
+  }
+  .chef-info{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:600px){
+  .cards-grid{
+    grid-template-columns:1fr;
+  }
+  .chef-info{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ESTADO INICIAL (oculto) */
+.scroll-reveal,
+.scroll-left,
+.scroll-right{
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+/* Animación desde abajo */
+.scroll-reveal{
+  transform: translateY(80px);
+}
+
+/* Animación desde la izquierda */
+.scroll-left{
+  transform: translateX(-80px);
+}
+
+/* Animación desde la derecha */
+.scroll-right{
+  transform: translateX(80px);
+}
+
+/* CUANDO SE ACTIVA */
+.show{
+  opacity: 1;
+  transform: translate(0,0);
+}
+#menu .card{
+  background:linear-gradient(160deg, rgba(0,180,216,.25), rgba(0,80,150,.25));
+}
+#promociones .card{
+  background:linear-gradient(160deg, rgba(72,202,228,.25), rgba(0,150,199,.25));
+}
+#equipo .card,
+#equipo .info-card{
+  background:linear-gradient(160deg, rgba(0,119,182,.25), rgba(0,60,110,.25));
+}
+.static-ejemplo{
+  position: static;
+  background: rgba(255,255,255,0.2);
+  padding: 10px;
+  margin: 20px;
+  text-align: center;
+}
+
+/* ===== TOAST NOTIFICACIÓN ===== */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #00e5ff, #0072ff);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.4s;
+    z-index: 9999;
+}
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== NAVBAR SCROLL ===== */
+.navbar.scrolled {
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+/* ===== BOTONES PRO ===== */
+.btn {
+    background: linear-gradient(135deg, #00e5ff, #0072ff);
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    color: white;
+    transition: 0.3s;
+}
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 20px rgba(0,229,255,0.5);
+}
+
+/* ===== CARDS PRO ===== */
+.card {
+    transition: 0.4s;
+}
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* ===== MODAL ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+}
+.modal-content {
+    background: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+}
+/* PRECIO PROMOCIÓN */
+.precio.promo{
+  color:#00ffae;
+  font-size:20px;
+  font-weight:800;
+  text-shadow:0 0 15px rgba(0,255,174,0.8);
+  animation:brillo 1.5s infinite alternate;
+}
+
+/* EFECTO BRILLO */
+@keyframes brillo{
+  from{ transform:scale(1); opacity:.8; }
+  to{ transform:scale(1.1); opacity:1; }
+}
+
+/* ETIQUETA PROMO */
+.card::marker{ display:none; }
+
+.card .promo-tag{
+  position:absolute;
+  top:15px;
+  left:15px;
+  background:linear-gradient(45deg,#ff0055,#ff7a00);
+  color:#fff;
+  font-size:12px;
+  padding:6px 12px;
+  border-radius:20px;
+  box-shadow:0 0 10px rgba(255,0,85,0.6);
+}

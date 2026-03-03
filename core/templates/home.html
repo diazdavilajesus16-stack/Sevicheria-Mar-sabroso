@@ -5,16 +5,62 @@
     <meta charset="UTF-8">
     <title>Cevichería - El Sabor Marino</title>
 
-    <!-- FUENTE POPPINS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- FUENTE -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- ESTILOS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="{% static 'assets/css/estilo.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 </head>
-<body>
-<div class="wrapper">
 
+<body class="fade-in">
+
+ <div class="ocean-pro">
+
+  <!-- burbujas -->
+  <div class="bubbles">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- peces -->
+  <img src="{% static 'assets/img/fish1.png' %}" class="fish fish1">
+  <img src="{% static 'assets/img/fish2.png' %}" class="fish fish2">
+  <img src="{% static 'assets/img/fish3.png' %}" class="fish fish3">
+  <img src="{% static 'assets/img/fish4.png' %}" class="fish fish4">
+  <img src="{% static 'assets/img/fish5.png' %}" class="fish fish5">
+  <img src="{% static 'assets/img/fish6.png' %}" class="fish fish6">
+  <img src="{% static 'assets/img/fish7.png' %}" class="fish fish7">
+  <img src="{% static 'assets/img/fish8.png' %}" class="fish fish8">
+  <img src="{% static 'assets/img/fish9.png' %}" class="fish fish9">
+
+ <!-- Algas tipo Phaeophyceae -->
+<div class="aquarium">
+  <!-- Alguitas tipo Phaeophyceae -->
+  <div class="seaweed phaeo1">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="seaweed phaeo2">
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <div class="seaweed phaeo3">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="seaweed phaeo4">
+    <span></span><span></span>
+  </div>
+
+  <!-- Plantas de colores -->
+  <div class="plant plant1"><span></span><span></span><span></span></div>
+  <div class="plant plant2"><span></span><span></span><span></span></div>
+  <div class="plant plant3"><span></span><span></span><span></span></div>
+  <div class="plant plant4"><span></span><span></span></div>
+  <div class="plant plant5"><span></span><span></span></div>
+</div>
+
+</div>
+
+<div class="wrapper">
 <!-- ===================== NAVBAR ===================== -->
 <header class="navbar">
     <div class="logo">
@@ -27,6 +73,7 @@
         <a href="#promociones">Promociones</a>
         <a href="#about">Acerca</a>
         <a href="#contact">Contacto</a>
+         <a href="#" onclick="toggleCarrito()">🛒</a>
     </nav>
 </header>
 
@@ -63,74 +110,151 @@
 <!-- ===================== PLATOS DESTACADOS ===================== -->
 <section id="menu" class="scroll-reveal wave-bottom">
   <h2>Platos Marinos</h2>
-  <div class="cards-grid">
+
+  <div class="owl-carousel owl-theme menu-carousel">
+
     <div class="card">
       <img src="{% static 'assets/img/seviche.jpg' %}" alt="Ceviche Clásico">
-      <h3>Ceviche Clásico</h3>
-      <p>Fresco pescado del día marinado con limón, cebolla y ají, acompañado de camote y choclo.</p>
-      <a href="#" class="btn">Pedir Ahora</a>
+      <div class="card-content">
+        <h3>Ceviche Clásico</h3>
+        <p>Fresco pescado del día marinado con limón, cebolla y ají.</p>
+        <span class="precio">S/ 25.00</span>
+        <button class="btn" onclick="agregarCarrito('Ceviche Clásico',25)">Agregar 🛒</button>
+      </div>
     </div>
+
     <div class="card">
       <img src="{% static 'assets/img/ceviche-mixto.jpg' %}" alt="Ceviche Mixto">
-      <h3>Ceviche Mixto</h3>
-      <p>Mariscos frescos combinados con el auténtico sabor peruano: camarones, calamares y pescado.</p>
-      <a href="#" class="btn">Ver Menú</a>
+      <div class="card-content">
+        <h3>Ceviche Mixto</h3>
+        <p>Mariscos frescos combinados con el auténtico sabor peruano.</p>
+        <span class="precio">S/ 30.00</span>
+        <button class="btn" onclick="agregarCarrito('Ceviche Mixto',30)">Agregar 🛒</button>
+      </div>
     </div>
+
     <div class="card">
       <img src="{% static 'assets/img/pulpo.webp' %}" alt="Pulpo a la Parrilla">
-      <h3>Pulpo a la Parrilla</h3>
-      <p>Tentáculos de pulpo cocinados a la parrilla con aceite de oliva, especias y ensalada fresca.</p>
-      <a href="#" class="btn">Ordenar</a>
+      <div class="card-content">
+        <h3>Pulpo a la Parrilla</h3>
+        <p>Pulpo a la parrilla con aceite de oliva y especias.</p>
+        <span class="precio">S/ 40.00</span>
+        <button class="btn" onclick="agregarCarrito('Pulpo a la Parrilla',40)">Agregar 🛒</button>
+      </div>
     </div>
+
     <div class="card">
       <img src="{% static 'assets/img/langostinos.jpg' %}" alt="Langostinos al Ajillo">
-      <h3>Langostinos al Ajillo</h3>
-      <p>Langostinos salteados en mantequilla y ajo con un toque de limón y perejil fresco.</p>
-      <a href="#" class="btn">Pedir Ahora</a>
+      <div class="card-content">
+        <h3>Langostinos al Ajillo</h3>
+        <p>Langostinos salteados con mantequilla, ajo y limón.</p>
+        <span class="precio">S/ 35.00</span>
+        <button class="btn" onclick="agregarCarrito('Langostinos al Ajillo',35)">Agregar 🛒</button>
+      </div>
     </div>
+
     <div class="card">
       <img src="{% static 'assets/img/arroz-mariscos.jpg' %}" alt="Arroz con Mariscos">
-      <h3>Arroz con Mariscos</h3>
-      <p>Arroz amarillo con camarones, calamares y mejillones, cocinado con hierbas y especias del mar.</p>
-      <a href="#" class="btn">Ver Menú</a>
+      <div class="card-content">
+        <h3>Arroz con Mariscos</h3>
+        <p>Arroz con camarones, calamares y mejillones.</p>
+        <span class="precio">S/ 28.00</span>
+        <button class="btn" onclick="agregarCarrito('Arroz con Mariscos',28)">Agregar 🛒</button>
+      </div>
     </div>
+
     <div class="card">
       <img src="{% static 'assets/img/pescado-plancha.jpg' %}" alt="Pescado a la Plancha">
-      <h3>Pescado a la Plancha</h3>
-      <p>Filete fresco cocido a la plancha, acompañado de verduras al vapor y salsa ligera de limón.</p>
-      <a href="#" class="btn">Ordenar</a>
+      <div class="card-content">
+        <h3>Pescado a la Plancha</h3>
+        <p>Filete fresco con verduras al vapor.</p>
+        <span class="precio">S/ 27.00</span>
+        <button class="btn" onclick="agregarCarrito('Pescado a la Plancha',27)">Agregar 🛒</button>
+      </div>
     </div>
+
     <div class="card">
       <img src="{% static 'assets/img/calamares-rellenos.jpg' %}" alt="Calamares Rellenos">
-      <h3>Calamares Rellenos</h3>
-      <p>Calamares rellenos de mariscos y hierbas aromáticas, con puré cremoso y reducción de vino blanco.</p>
-      <a href="#" class="btn">Pedir Ahora</a>
+      <div class="card-content">
+        <h3>Calamares Rellenos</h3>
+        <p>Calamares rellenos con puré cremoso.</p>
+        <span class="precio">S/ 32.00</span>
+        <button class="btn" onclick="agregarCarrito('Calamares Rellenos',32)">Agregar 🛒</button>
+      </div>
     </div>
+
     <div class="card">
       <img src="{% static 'assets/img/chupe-camarones.jpg' %}" alt="Chupe de Camarones">
-      <h3>Chupe de Camarones</h3>
-      <p>Sopa cremosa peruana con camarones, papa, choclo y hierbas aromáticas, reconfortante y llena de sabor.</p>
-      <a href="#" class="btn">Ver Menú</a>
+      <div class="card-content">
+        <h3>Chupe de Camarones</h3>
+        <p>Sopa cremosa tradicional peruana.</p>
+        <span class="precio">S/ 26.00</span>
+        <button class="btn" onclick="agregarCarrito('Chupe de Camarones',26)">Agregar 🛒</button>
+      </div>
     </div>
+
   </div>
 </section>
 
 <!-- ===================== PROMOCIONES ===================== -->
 <section id="promociones" class="scroll-left wave-bottom">
   <h2>Promociones del Día</h2>
-  <div class="cards-grid">
+
+  <div class="owl-carousel promo-carousel">
+
+
     <div class="card">
       <img src="{% static 'assets/img/combo1.jpg' %}" alt="Combo Mar y Tierra">
-      <h3>Combo Mar y Tierra</h3>
-      <p>Incluye ceviche mixto + bebida.</p>
-      <a href="#" class="btn">Ordenar</a>
+
+      <div class="card-content">
+        <h3>Combo Mar y Tierra</h3>
+        <p>Incluye ceviche mixto + bebida.</p>
+
+        <span class="precio promo"> S/ 35.00</span>
+
+        <button class="btn">Ordenar 🛒</button>
+      </div>
     </div>
+
     <div class="card">
       <img src="{% static 'assets/img/combo2.jpg' %}" alt="Combo Tradicional">
-      <h3>Combo Tradicional</h3>
-      <p>Ceviche clásico + chicha morada.</p>
-      <a href="#" class="btn">Ordenar</a>
+
+      <div class="card-content">
+        <h3>Combo Tradicional</h3>
+        <p>Ceviche clásico + chicha morada.</p>
+
+        <span class="precio promo"> S/ 28.00</span>
+
+        <button class="btn">Ordenar 🛒</button>
+      </div>
     </div>
+
+    <div class="card">
+      <img src="{% static 'assets/img/comboconchanegra.png' %}" alt="Combo Mar y Tierra">
+
+      <div class="card-content">
+        <h3>Conchas Negras Premium</h3>
+        <p>Conchas Negras + gaseosa Inka Kola 1.5 L.</p>
+
+        <span class="precio promo"> S/ 25.00</span>
+
+        <button class="btn">Ordenar 🛒</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="{% static 'assets/img/combomarisco.png' %}" alt="Combo Mar y Tierra">
+
+      <div class="card-content">
+        <h3>Ceviche Supremo de Mariscos</h3>
+        <p>Exquisita mezcla de mariscos fresco + Refresco de maracuyá (1L).</p>
+
+        <span class="precio promo"> S/ 15.00</span>
+
+        <button class="btn">Ordenar 🛒</button>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -217,7 +341,48 @@
   </div>
 </footer>
 
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<!-- Tu carrusel personalizado -->
 <script src="{% static 'assets/js/carrusel.js' %}"></script>
+
+<!-- Inicializar Owl -->
+<script>
+$(document).ready(function(){
+
+  $(".menu-carousel").owlCarousel({
+    loop:true,
+    margin:25,
+    nav:true,
+    dots:true,
+    autoplay:true,
+    autoplayTimeout:3500,
+    responsive:{
+      0:{ items:1 },
+      600:{ items:2 },
+      1000:{ items:3 }
+    }
+  });
+
+  $(".promo-carousel").owlCarousel({
+    loop:true,
+    margin:25,
+    nav:true,
+    dots:true,
+    autoplay:true,
+    autoplayTimeout:4000,
+    responsive:{
+      0:{ items:1 },
+      768:{ items:2 }
+    }
+  });
+
+});
+</script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const formulario = document.getElementById("formContacto");
@@ -239,6 +404,50 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 </div>
+<script>
+let carrito = [];
+
+function agregarCarrito(nombre, precio){
+    carrito.push({nombre, precio});
+    mostrarNotificacion(nombre + " agregado 🛒");
+    actualizarCarrito();
+}
+
+function actualizarCarrito(){
+    console.log(carrito);
+}
+
+function mostrarNotificacion(msg){
+    const notif = document.createElement("div");
+    notif.className = "toast";
+    notif.innerText = msg;
+    document.body.appendChild(notif);
+
+    setTimeout(()=> notif.classList.add("show"), 100);
+    setTimeout(()=>{
+        notif.classList.remove("show");
+        setTimeout(()=> notif.remove(), 300);
+    }, 2500);
+}
+</script>
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h3 id="modalTitulo"></h3>
+    <p id="modalDesc"></p>
+    <button onclick="cerrarModal()">Cerrar</button>
+  </div>
+</div>
+<script>
+function abrirModal(nombre, desc){
+    document.getElementById("modal").style.display = "block";
+    document.getElementById("modalTitulo").innerText = nombre;
+    document.getElementById("modalDesc").innerText = desc;
+}
+
+function cerrarModal(){
+    document.getElementById("modal").style.display = "none";
+}
+</script>
 </body>
 <script>
 // ===================== SCROLL REVEAL =====================

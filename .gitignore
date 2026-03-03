@@ -1,10 +1,41 @@
-SEVICHERIA/
-│
-├── assets/
-│   ├── css/
-│   ├── img/
-│   └── js/
-│
-├── Dockerfile
-├── docker-compose.yml
-├── index.html
+# 🔐 Archivos de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 🐍 Entornos virtuales
+venv/
+env/
+ENV/
+
+# ⚙️ Archivos de Django
+db.sqlite3
+*.log
+*.pot
+*.pyc
+*.sqlite3
+
+# 📁 Archivos de migración (opcional si quieres)
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# 🔑 Variables de entorno
+.env
+
+# 🧠 VS Code
+.vscode/
+
+# 🧪 Archivos temporales
+*.swp
+*.swo
+
+# 📦 Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# 📁 Archivos estáticos compilados (opcional)
+staticfiles/
+
+# 🐳 Docker (opcional)
+*.env
